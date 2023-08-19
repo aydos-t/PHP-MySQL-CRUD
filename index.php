@@ -1,5 +1,6 @@
 <?php
+error_reporting(E_ALL);
 
-require_once 'connect.php';
+include 'connect.php' . 'show.php';
 
 ?>
