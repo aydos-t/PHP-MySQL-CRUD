@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
 
-include 'connect.php' . 'show.php';
-
+require_once 'config/connect.php';
+require_once 'show.php';
+require_once 'vendor/create.php';
 ?>
