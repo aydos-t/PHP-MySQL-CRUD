@@ -8,9 +8,6 @@ require_once 'config/connect.php';
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Products</title>
 </head>
 <style>
@@ -29,15 +26,15 @@ require_once 'config/connect.php';
 </style>
 
 <body>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Description</th>
-    </tr>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
 
-    <?php
+        <?php
         $products = mysqli_query($connect, "SELECT * FROM `products`");
         $products = mysqli_fetch_all($products);
         foreach ($products as $product) {
@@ -47,13 +44,14 @@ require_once 'config/connect.php';
                 <td><?= $product[1] ?></td>
                 <td><?= '$' . $product[2] ?></td>
                 <td><?= $product[3] ?></td>
+                <td><a style="color: yellow;" href="update.php?id=<?= $product[0] ?>">Update</a></td>
             </tr>
             <?php
         }
-    ?>
-</table>
+        ?>
+    </table>
 
-<h3>Add new product</h3>
+    <h3>Add new product</h3>
     <form action="vendor/create.php" method="post">
         <p>Title</p>
         <input type="text" name="title">
