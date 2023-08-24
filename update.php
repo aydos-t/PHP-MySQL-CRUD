@@ -1,9 +1,27 @@
 <?php
+/*
+     * Connecting the file to get a connection to the database (NavicatPremium, MySQL)
+     */
 
 require_once 'config/connect.php';
 
+/*
+     * Get the product ID from the address bar - /product.php?id=1
+     */
+
 $product_id = $_GET['id'];
+
+/*
+     * Making a selection of the row with the received ID above
+     */
+
 $product = mysqli_query($connect, "SELECT * FROM `products` WHERE `id` = '$product_id'");
+
+/*
+     * Converting the received data into a normal array
+     * Using the mysqli_fetch_assoc function, the array will have keys equal to the column names in the table
+     */
+
 $product = mysqli_fetch_assoc($product);
 ?>
 
