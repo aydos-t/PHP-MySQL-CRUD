@@ -17,8 +17,8 @@ $comments = mysqli_fetch_all($comments);
     <title>Product</title>
 </head>
 <body>
-    <h2>Title: <?= $product['title'] ?></h2>
-    <h4>Price: <?= $product['price'] ?></h4>
+    <p>Title: <?= $product['title'] ?></p>
+    <p>Price: <?= $product['price'] ?></p>
     <p>Description: <?= $product['description'] ?></p>
 
     <hr>
